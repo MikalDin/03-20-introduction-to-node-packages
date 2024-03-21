@@ -5,36 +5,23 @@ import './App.css';
 
 function App() {
 
-  const notify = () => {
-              toast('Hello, this is A MESSAGE for mIkal!!!!')
-              
-              toast.success("sucess Notification! good job!!", {
-                position: "top-center"
-              });
+  const handleSuccess = () => toast.success("Success message!");
+  const handleError = () => toast.error("Error message!");
+  const handleInfo = () =>  toast.info("Info message");
+  const handleWarning = () => toast.warning("Warning message");
 
-              toast.error("Errorr. suttin Screwed it up Notification!", {
-                position: "top-left"
-              });
-
-              toast.warn("Warning Notification! its getting messiyy!", {
-                position: "bottom-left"
-              });
-
-              toast.info("Info Notification ! heads up!", {
-                position: "bottom-center"
-               });
-
-               toast("Custon Style Notification with Css class!", {
-                position: "bottom-right",
-                className: 'foo-bar'
-               })
-              }
+  
   return (
-<> 
-<button onClick={notify}>Notify</button>
+    <div>
 
-<ToastContainer />
- </>
+  <button onClick={handleSuccess}>Success</button>
+  <button onClick={handleError}>Error</button>
+  <button onClick={handleInfo}>Info</button>
+  <button onClick={handleWarning}>Warning</button>
+  
+  <ToastContainer />
+  </div>
+
   )
 }
 
