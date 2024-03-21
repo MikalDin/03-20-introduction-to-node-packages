@@ -1,25 +1,41 @@
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const notify = () => {
+              toast('Hello, this is A MESSAGE for mIkal!!!!')
+              
+              toast.success("sucess Notification! good job!!", {
+                position: "top-center"
+              });
+
+              toast.error("Errorr. suttin Screwed it up Notification!", {
+                position: "top-left"
+              });
+
+              toast.warn("Warning Notification! its getting messiyy!", {
+                position: "bottom-left"
+              });
+
+              toast.info("Info Notification ! heads up!", {
+                position: "bottom-center"
+               });
+
+               toast("Custon Style Notification with Css class!", {
+                position: "bottom-right",
+                className: 'foo-bar'
+               })
+              }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+<> 
+<button onClick={notify}>Notify</button>
+
+<ToastContainer />
+ </>
+  )
 }
 
-export default App;
+export default App
